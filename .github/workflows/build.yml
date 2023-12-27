@@ -19,18 +19,18 @@ jobs:
     - name: Install Premake
       run: |
         wget https://github.com/premake/premake-core/releases/download/v5.0.0-beta2/premake-5.0.0-beta2-linux.tar.gz -O premake.tar.gz
-        tar -xvf premake.tar.gz --directory=/usr/bin
-        apt-get update
-        apt-get install g++-multilib
-        gcc --version
+        sudo tar -xvf premake.tar.gz --directory=/usr/bin
+        sudo apt-get update
+        sudo apt-get install g++-multilib
+        sudo gcc --version
     - name: Generate Project
       run: |
-        premake5 --gmcommon=garrysmod_common gmake
+        sudo premake5 --gmcommon=garrysmod_common gmake
     - name: Make
       run: |
         cd projects/linux/gmake
-        make
-        make config=releasewithsymbols_x86_64
+        sudo make
+        sudo make config=releasewithsymbols_x86_64
     - uses: actions/upload-artifact@v2
       with:
         name: gmsv_cmdremover_linux.dll
