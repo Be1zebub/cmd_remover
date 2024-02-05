@@ -13,4 +13,3 @@ CreateWorkspace {name = "cmdremover"}
         IncludeSDKTier0()
         IncludeSDKCommon()
         IncludeHelpersExtended()
-        files {"src/cmdremover.cpp"}
